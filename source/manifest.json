@@ -1,5 +1,5 @@
 {
-	"name": "Awesome Extension",
+	"name": "Three Two One",
 	"version": "0.0.0",
 	"description": "An awesome new browser extension",
 	"homepage_url": "https://github.com/awesome-templates/browser-extension-template",
@@ -24,7 +24,7 @@
 	"background": {
 		"persistent": false,
 		"scripts": [
-			"background.js"
+			"background.ts"
 		]
 	}
 }
