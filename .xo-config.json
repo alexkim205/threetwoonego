@@ -1,0 +1,17 @@
+{
+  "envs": [
+	"browser"
+  ],
+  "semicolon": false,
+  "space": true,
+  "rules": {
+	"no-unused-vars": [
+	  "error",
+	  {
+		"varsIgnorePattern": "browser"
+	  }
+	],
+	"import/no-unassigned-import": 0,
+	"@typescript-eslint/no-floating-promises": 0
+  }
+}

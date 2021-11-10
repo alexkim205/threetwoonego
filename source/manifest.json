@@ -1,30 +1,33 @@
 {
-	"name": "Three Two One",
-	"version": "0.0.0",
-	"description": "An awesome new browser extension",
-	"homepage_url": "https://github.com/awesome-templates/browser-extension-template",
-	"manifest_version": 2,
-	"minimum_chrome_version": "74",
-	"applications": {
-		"gecko": {
-			"id": "awesome-extension@notlmn.github.io",
-			"strict_min_version": "67.0"
-		}
-	},
-	"icons": {
-		"128": "icon.png"
-	},
-	"permissions": [
-		"storage"
-	],
-	"options_ui": {
-		"chrome_style": true,
-		"page": "options.html"
-	},
-	"background": {
-		"persistent": false,
-		"scripts": [
-			"background.ts"
-		]
+  "name": "Three Two One",
+  "version": "0.0.0",
+  "description": "An easy video sharing extension for browsers",
+  "homepage_url": "https://github.com/alexkim205",
+  "manifest_version": 2,
+  "minimum_chrome_version": "74",
+  "applications": {
+	"gecko": {
+	  "id": "alexgkim205@gmail.com",
+	  "strict_min_version": "67.0"
 	}
+  },
+  "icons": {
+	"128": "icon.png"
+  },
+  "permissions": [
+	"storage",
+	"activeTab"
+  ],
+  "browser_action": {
+	"default_popup": "popup.html",
+	"default_icon": {
+	  "128": "icon.png"
+	}
+  },
+  "background": {
+	"persistent": false,
+	"scripts": [
+	  "background.ts"
+	]
+  }
 }

@@ -7,38 +7,38 @@
 		"lint:css": "stylelint source/**/*.css",
 		"lint:js": "xo",
 		"test": "run-p lint:* build",
-		"watch": "parcel watch source/manifest.json --dist-dir distribution --no-cache --no-hmr"
+		"watch": "concurrently -n EXT,REACT -c yellow,green \"parcel watch source/manifest.json --dist-dir distribution --no-cache --no-hmr\" \"babel source --watch --extensions '.tsx' --out-dir distribution --presets=@babel/preset-react,@babel/preset-typescript\"",
+		"prepare": "husky install"
 	},
 	"browserslist": [
 		"last 1 Chrome version",
 		"last 1 Firefox version"
 	],
-	"xo": {
-		"envs": [
-			"browser"
-		],
-		"semicolon": false,
-		"rules": {
-			"no-unused-vars": [
-				"error",
-				{
-					"varsIgnorePattern": "browser"
-				}
-			]
-		}
-	},
 	"stylelint": {
 		"extends": "stylelint-config-xo"
 	},
 	"dependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
 		"webext-options-sync": "^2.0.1",
 		"webextension-polyfill": "^0.8.0"
 	},
 	"devDependencies": {
+		"@babel/cli": "^7.16.0",
+		"@babel/core": "^7.16.0",
+		"@babel/preset-react": "^7.16.0",
+		"@babel/preset-typescript": "^7.16.0",
 		"@parcel/config-webextension": "^2.0.0-rc.0",
 		"@parcel/transformer-image": "^2.0.0-rc.0",
 		"@sindresorhus/tsconfig": "^2.0.0",
+		"@types/jest": "^27.0.2",
+		"@types/node": "^16.11.7",
+		"@types/react": "^17.0.34",
+		"@types/react-dom": "^17.0.11",
+		"@types/webextension-polyfill": "^0.8.1",
+		"concurrently": "^6.3.0",
 		"husky": "^7.0.4",
+		"lint-staged": ">=10",
 		"npm-run-all": "^4.1.5",
 		"parcel": "^2.0.0-rc.0",
 		"stylelint": "^13.13.1",
@@ -47,5 +47,9 @@
 	},
 	"webExt": {
 		"sourceDir": "distribution"
+	},
+	"lint-staged": {
+		"(source/**/*)*.{scss,css}": "stylelint --fix",
+	  	"(source/**/*)*.{js,ts,mjs,tsx}": "xo --fix"
 	}
 }
