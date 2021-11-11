@@ -1,0 +1,6 @@
+{
+  "extends": "stylelint-config-xo",
+  "rules": {
+	"indentation": "tab"
+  }
+}

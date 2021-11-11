@@ -14,9 +14,6 @@
 		"last 1 Chrome version",
 		"last 1 Firefox version"
 	],
-	"stylelint": {
-		"extends": "stylelint-config-xo"
-	},
 	"dependencies": {
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
@@ -50,6 +47,6 @@
 	},
 	"lint-staged": {
 		"(src/**/*)*.{scss,css}": "stylelint --fix",
-	  	"(src/**/*)*.{js,ts,mjs,tsx}": "xo --fix"
+		"(src/**/*)*.{js,ts,mjs,tsx}": "xo --fix"
 	}
 }
