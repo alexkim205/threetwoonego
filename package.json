@@ -1,13 +1,13 @@
 {
 	"private": true,
 	"scripts": {
-		"build": "parcel build source/manifest.json --no-content-hash --no-source-maps --dist-dir distribution --no-cache --detailed-report 0",
+		"build": "parcel build src/manifest.json --no-content-hash --no-source-maps --dist-dir dist --no-cache --detailed-report 0",
 		"lint": "run-p lint:*",
 		"lint-fix": "run-p 'lint:* --fix'",
-		"lint:css": "stylelint source/**/*.css",
+		"lint:css": "stylelint src/**/*.css",
 		"lint:js": "xo",
 		"test": "run-p lint:* build",
-		"watch": "concurrently -n EXT,REACT -c yellow,green \"parcel watch source/manifest.json --dist-dir distribution --no-cache --no-hmr\" \"babel source --watch --extensions '.tsx' --out-dir distribution --presets=@babel/preset-react,@babel/preset-typescript\"",
+		"watch": "concurrently -n EXT,REACT -c yellow,green \"parcel watch src/manifest.json --dist-dir dist --no-cache --no-hmr\" \"babel src --watch --extensions '.tsx' --out-dir dist --presets=@babel/preset-react,@babel/preset-typescript\"",
 		"prepare": "husky install"
 	},
 	"browserslist": [
@@ -46,10 +46,10 @@
 		"xo": "^0.44.0"
 	},
 	"webExt": {
-		"sourceDir": "distribution"
+		"sourceDir": "dist"
 	},
 	"lint-staged": {
-		"(source/**/*)*.{scss,css}": "stylelint --fix",
-	  	"(source/**/*)*.{js,ts,mjs,tsx}": "xo --fix"
+		"(src/**/*)*.{scss,css}": "stylelint --fix",
+	  	"(src/**/*)*.{js,ts,mjs,tsx}": "xo --fix"
 	}
 }
