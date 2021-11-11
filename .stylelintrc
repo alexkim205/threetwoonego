@@ -1,6 +1,8 @@
 {
   "extends": "stylelint-config-xo",
   "rules": {
-	"indentation": "tab"
+	"indentation": "tab",
+	"selector-id-pattern": null,
+	"selector-class-pattern": null
   }
 }

@@ -3,7 +3,7 @@
 	"browser"
   ],
   "semicolon": false,
-  "space": true,
+  "space": false,
   "rules": {
 	"no-unused-vars": [
 	  "error",
